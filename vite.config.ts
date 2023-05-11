@@ -33,7 +33,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/fmsv2": {
-        target: "http://192.168.180.138:8081/",
+        target: "http://test.smartdata.net.cn/",
         changeOrigin: true,
         // rewrite: (path)=> path.replace('^\/fmsv2/','')
       },
