@@ -17,6 +17,8 @@ instance.interceptors.request.use(
     config.cancelToken = new axios.CancelToken((cancel) => {
       window.axiosPromiseArr.push({ cancel })
     })
+    config.ZlbAuthorization =
+      "Bearer eyJhbGciOiJIUzUxMiJ9.eyJ6bGJfbG9naW5fdXNlcl9rZXkiOm51bGx9.gDbUnJd_ait-kf_-HSrBnChagzdIPoBjzYX8asZHRUXfHRcdihqI-EZZJdIDP9POkxJXzqWwv6AGh2Qedg57Lw"
     // 在发送请求之前做些什么,在此可以设置token
     return config
   },

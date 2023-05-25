@@ -7,11 +7,14 @@ import Components from "unplugin-vue-components/vite"
 // 需要按需引入那个组件库,就用去源码看哪个，以前缀为开头
 import { VantResolver } from "unplugin-vue-components/resolvers"
 
+import unocss from "unocss/vite"
+
 const path = require("path")
 
 export default defineConfig({
   plugins: [
     vue(),
+    unocss(),
     AutoImport({
       dts: "src/types/auto-import.d.ts",
       imports: ["vue", "vue-router"],
@@ -31,9 +34,10 @@ export default defineConfig({
     },
   },
   server: {
+    port: 3300,
     proxy: {
-      "/fmsv2": {
-        target: "http://test.smartdata.net.cn/",
+      "/pointsMall-api": {
+        target: "http://192.168.180.147:9096/",
         changeOrigin: true,
         // rewrite: (path)=> path.replace('^\/fmsv2/','')
       },

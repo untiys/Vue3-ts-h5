@@ -1,6 +1,11 @@
 <template>
-  <div @click="goLogin">首页</div>
-  <div><button @click="add">count加1</button>{{ count }}</div>
+  <div @click="goLogin" class="add">首页</div>
+  <van-notice-bar
+    left-icon="volume"
+    text="本期浔积分在2023年12月31日 23点清零，请及时使用！"
+  />
+  <van-button type="success" @click="add">count加1</van-button>
+  <div class="count">50</div>
 </template>
 
 <script setup lang="ts">
@@ -22,4 +27,13 @@ const add = () => {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.add {
+  color: #363a44;
+  font-size: 18px;
+  font-weight: 600;
+}
+.count {
+  font-size: 41px;
+}
+</style>
